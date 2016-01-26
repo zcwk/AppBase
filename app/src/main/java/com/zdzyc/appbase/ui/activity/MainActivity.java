@@ -1,9 +1,11 @@
-package com.zdzyc.appbase;
+package com.zdzyc.appbase.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.zdzyc.appbase.R;
 
 public class MainActivity extends Activity {
 

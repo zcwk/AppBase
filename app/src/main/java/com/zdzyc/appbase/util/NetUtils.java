@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.zdzyc.appbase.App;
+
 /**
  * Created by zdzyc on 2016/1/26.
  * <p/>
@@ -21,12 +23,11 @@ public class NetUtils {
     /**
      * 判断网络是否连接
      *
-     * @param context
      * @return
      */
-    public static boolean isConnected(Context context) {
+    public static boolean isConnected() {
 
-        ConnectivityManager connectivity = (ConnectivityManager) context
+        ConnectivityManager connectivity = (ConnectivityManager) App.sContext
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (null != connectivity) {
@@ -44,8 +45,8 @@ public class NetUtils {
     /**
      * 判断是否是wifi连接
      */
-    public static boolean isWifi(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context
+    public static boolean isWifi() {
+        ConnectivityManager cm = (ConnectivityManager) App.sContext
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (cm == null)

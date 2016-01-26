@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
+import com.zdzyc.appbase.App;
+
 /**
  * Created by zdzyc on 2016/1/26.
  * <p/>
@@ -21,13 +23,13 @@ public class AppUtils {
     /**
      * 获取应用程序名称
      */
-    public static String getAppName(Context context) {
+    public static String getAppName() {
         try {
-            PackageManager packageManager = context.getPackageManager();
+            PackageManager packageManager = App.sContext.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
-                    context.getPackageName(), 0);
+                    App.sContext.getPackageName(), 0);
             int labelRes = packageInfo.applicationInfo.labelRes;
-            return context.getResources().getString(labelRes);
+            return App.sContext.getResources().getString(labelRes);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -37,14 +39,14 @@ public class AppUtils {
     /**
      * [获取应用程序版本名称信息]
      *
-     * @param context
+     * @param App.sContext
      * @return 当前应用的版本名称
      */
-    public static String getVersionName(Context context) {
+    public static String getVersionName() {
         try {
-            PackageManager packageManager = context.getPackageManager();
+            PackageManager packageManager = App.sContext.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
-                    context.getPackageName(), 0);
+                    App.sContext.getPackageName(), 0);
             return packageInfo.versionName;
 
         } catch (PackageManager.NameNotFoundException e) {
